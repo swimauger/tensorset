@@ -1,6 +1,6 @@
 {
   "name": "tensorset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TensorflowJS Dataset parsing and stringifying",
   "main": "tensorset.js",
   "repository": {

@@ -5,7 +5,7 @@ class Tensorset {
         data = JSON.parse(data);
         const dataset = {};
         for (const example of data) {
-            dataset[example.label] = tf.tensor(example.values, example.label);
+            dataset[example.label] = tf.tensor(example.values, example.shape);
         }
         return dataset;
     }
