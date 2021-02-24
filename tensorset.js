@@ -2,24 +2,24 @@ const tf = require('@tensorflow/tfjs');
 
 class Tensorset {
     static parse(data) {
-        data = JSON.parse(data);
-        const dataset = {};
-        for (const example of data) {
-            dataset[example.label] = tf.tensor(example.values, example.shape);
-        }
-        return dataset;
+        return JSON.parse(data).reduce((dataset, { label, values, shape }) => {
+            return {
+                ...dataset,
+                [label]: tf.tensor(values, shape)
+            };
+        }, {});
     }
 
     static async stringify(dataset) {
-        const data = [];
-        for (const label in dataset) {
-            data.push({
-                label,
-                values: Array.from(await dataset[label].data()),
-                shape: dataset[label].shape
-            });
-        }
-        return JSON.stringify(data);
+        return JSON.stringify(
+            await Promise.all(Object.entries(dataset).map(async ([label, value]) => {
+                return {
+                    label,
+                    values: Array.from(await value.data()),
+                    shape: value.shape
+                }
+            }))
+        );
     }
 }
 
