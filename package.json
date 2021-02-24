@@ -1,8 +1,11 @@
 {
   "name": "tensorset",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "TensorflowJS Dataset parsing and stringifying",
   "main": "tensorset.js",
+  "scripts": {
+    "test": "jest --silent"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/swimauger/tensorset.git"
@@ -23,5 +26,8 @@
   "homepage": "https://github.com/swimauger/tensorset#readme",
   "dependencies": {
     "@tensorflow/tfjs": "^2.0.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }
