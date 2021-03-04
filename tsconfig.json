@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "declaration": true,
+      "declarationMap": true,
+      "esModuleInterop": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "lib",
+      "sourceMap": true,
+      "strict": true,
+      "target": "es2017",
+      "typeRoots": [ "node_modules/@types" ]
+  },
+  "include": [ "src" ]
+}

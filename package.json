@@ -1,9 +1,16 @@
 {
   "name": "tensorset",
-  "version": "1.1.0",
+  "author": "Mark Auger",
+  "version": "1.1.1",
   "description": "TensorflowJS Dataset parsing and stringifying",
-  "main": "tensorset.js",
+  "main": "lib/Tensorset.js",
+  "types": "lib",
+  "type": "commonjs",
+  "license": "MIT",
   "scripts": {
+    "prepublish": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf lib",
     "test": "jest --silent"
   },
   "repository": {
@@ -18,11 +25,7 @@
     "Stringify",
     "Parse"
   ],
-  "author": "Mark Auger",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/swimauger/tensorset/issues"
-  },
+  "bugs": "https://github.com/swimauger/tensorset/issues",
   "homepage": "https://github.com/swimauger/tensorset#readme",
   "dependencies": {
     "@tensorflow/tfjs": "^2.0.1"

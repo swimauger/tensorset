@@ -1,7 +1,6 @@
-const { exp } = require('@tensorflow/tfjs');
 const fs = require('fs/promises');
 const path = require('path');
-const Tensorset = require('../tensorset');
+const { Tensorset } = require('../lib/Tensorset');
 const DATASET_PATH = path.resolve(__dirname, 'dataset.json');
 
 describe('tensorset library tests', () => {

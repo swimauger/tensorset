@@ -1,8 +1,8 @@
-const tf = require('@tensorflow/tfjs');
+import * as tf from "@tensorflow/tfjs";
 
-class Tensorset {
-    static parse(data) {
-        return JSON.parse(data).reduce((dataset, { label, values, shape }) => {
+export class Tensorset {
+    static parse(data: string) {
+        return JSON.parse(data).reduce((dataset: any, { label, values, shape }: { label: any, values: any, shape: any }) => {
             return {
                 ...dataset,
                 [label]: tf.tensor(values, shape)
@@ -10,9 +10,9 @@ class Tensorset {
         }, {});
     }
 
-    static async stringify(dataset) {
+    static async stringify(dataset: any) {
         return JSON.stringify(
-            await Promise.all(Object.entries(dataset).map(async ([label, value]) => {
+            await Promise.all(Object.entries(dataset).map(async ([label, value]: any[]) => {
                 return {
                     label,
                     values: Array.from(await value.data()),
@@ -22,5 +22,3 @@ class Tensorset {
         );
     }
 }
-
-module.exports = Tensorset;
