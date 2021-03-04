@@ -1,10 +1,11 @@
 {
   "name": "tensorset",
   "author": "Mark Auger",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "TensorflowJS Dataset parsing and stringifying",
   "main": "lib/Tensorset.js",
   "type": "commonjs",
+  "types": "lib",
   "license": "MIT",
   "scripts": {
     "prepublish": "tsc",
