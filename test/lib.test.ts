@@ -1,6 +1,7 @@
-const fs = require('fs/promises');
-const path = require('path');
-const { Tensorset } = require('../lib/Tensorset');
+import * as fs from "fs/promises";
+import * as path from "path";
+import Tensorset from "../Tensorset";
+
 const DATASET_PATH = path.resolve(__dirname, 'dataset.json');
 
 describe('tensorset library tests', () => {
