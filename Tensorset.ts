@@ -1,8 +1,19 @@
 import * as tf from "@tensorflow/tfjs";
+import { Tensor2D } from "@tensorflow/tfjs";
 
-export class Tensorset {
-    static parse(data: string) {
-        return JSON.parse(data).reduce((dataset: any, { label, values, shape }: { label: any, values: any, shape: any }) => {
+interface TensorsetType {
+    [label: string]: Tensor2D;
+}
+
+interface TensorData {
+    label: string;
+    values: number[];
+    shape: number[];
+}
+
+export = class Tensorset {
+    static parse(data: string): TensorsetType {
+        return JSON.parse(data).reduce((dataset: any, { label, values, shape }: TensorData) => {
             return {
                 ...dataset,
                 [label]: tf.tensor(values, shape)
@@ -10,7 +21,7 @@ export class Tensorset {
         }, {});
     }
 
-    static async stringify(dataset: any) {
+    static async stringify(dataset: Tensorset): Promise<string> {
         return JSON.stringify(
             await Promise.all(Object.entries(dataset).map(async ([label, value]: any[]) => {
                 return {
