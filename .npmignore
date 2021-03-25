@@ -1,9 +1,11 @@
 test
 lib/test
-**/*.ts
-!**/*.d.ts
 tsconfig.json
 yarn.lock
 package-lock.json
 .gitignore
 .npmignore
+.eslintrc.yml
+jest.config.ts
+Tensorset.ts
+TODO.txt

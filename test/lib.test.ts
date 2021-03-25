@@ -1,12 +1,12 @@
-import * as fs from "fs/promises";
-import * as path from "path";
-import Tensorset from "../Tensorset";
+import * as fs from 'fs/promises';
+import * as path from 'path';
+import Tensorset from '../Tensorset';
 
 const DATASET_PATH: string = path.resolve(__dirname, 'dataset.json');
 
 describe('tensorset library tests', () => {
   test('tensorset parse legitimate dataset', async () => {
-    const data: string = await fs.readFile(DATASET_PATH, { encoding: 'utf-8' });
+    const data: string = await fs.readFile(DATASET_PATH, {encoding: 'utf-8'});
     expect(Tensorset.parse(data)).toBeDefined();
   });
 
@@ -19,12 +19,12 @@ describe('tensorset library tests', () => {
   });
 
   test('tensorset stringify legitimate dataset', async () => {
-    const data: string = await fs.readFile(DATASET_PATH, { encoding: 'utf-8' });
+    const data: string = await fs.readFile(DATASET_PATH, {encoding: 'utf-8'});
     const dataset = Tensorset.parse(data);
     expect(Tensorset.stringify(dataset)).resolves.toBeDefined();
   });
 
   test('tensorset stringify illegitimate dataset', async () => {
-    expect(Tensorset.stringify({ "a": { "b": "c" } })).rejects.toBeDefined();
+    expect(Tensorset.stringify({a: {b: 'c'}})).rejects.toBeDefined();
   });
 });
