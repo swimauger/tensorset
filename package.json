@@ -1,7 +1,7 @@
 {
   "name": "tensorset",
   "author": "Mark Auger",
-  "version": "1.2.1",
+  "version": "1.2.6",
   "description": "TensorflowJS Dataset parsing and stringifying",
   "main": "lib/Tensorset.js",
   "type": "commonjs",
@@ -10,9 +10,9 @@
   "scripts": {
     "prepublish": "tsc",
     "build": "tsc && cp test/dataset.json lib/test",
-    "dev": "mkdir -p lib/test && cp test/dataset.json lib/test && tsc --watch",
     "clean": "rm -rf lib",
-    "test": "jest --silent"
+    "test": "jest --silent",
+    "version": "conventional-changelog -i CHANGELOG.md -s -r 0"
   },
   "repository": {
     "type": "git",
@@ -30,12 +30,11 @@
   "bugs": "https://github.com/swimauger/tensorset/issues",
   "homepage": "https://github.com/swimauger/tensorset#readme",
   "dependencies": {
-    "@tensorflow/tfjs": "^2.0.1",
-    "tsconfig.json": "^1.0.7",
-    "yarn.lock": "^0.0.1-security"
+    "@tensorflow/tfjs": "^2.0.1"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
+    "conventional-changelog-cli": "^2.1.1",
     "jest": "^26.6.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.2"
