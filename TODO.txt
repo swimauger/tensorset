@@ -1,0 +1,6 @@
+- Add stringifySync method
+- Add custom error messages
+- Add automation
+  - Run Tests
+  - Run build & publish
+  - Run Linter
