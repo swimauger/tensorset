@@ -5,7 +5,7 @@ import * as tfCore from '@tensorflow/tfjs-core';
 * Tensorset is a class used similarly to JSON for stringifying
 * and parsing Google's KNN Classifier datasets
 * @author Mark Auger
-* @version 1.2.7
+* @version 1.2.8
 * @social Follow me on GitHub at https://github.com/swimauger
 * @license
 * Copyright (c) 2020 Mark Auger
