@@ -38,9 +38,9 @@ class Tensorset {
   * @param {string} data - Stringified tensorset file generated with assistance of `Tensorset.stringify`
   * @example
   * const dataset = Tensorset.parse(data);
-  * @returns { [label: string]: tf.Tensor | tfCore.Tensor } Returns KNN Classifier readable dataset
+  * @returns { [label: string]: Tensor2D } Returns KNN Classifier readable dataset
   **/
-  static parse(data: string): { [label: string]: tf.Tensor | tfCore.Tensor } {
+  static parse(data: string): { [label: string]: tf.Tensor2D | tfCore.Tensor2D } {
     return JSON.parse(data).reduce(
         (dataset: any, {label, values, shape}: any) => {
           return {
