@@ -1,15 +1,15 @@
 {
   "name": "tensorset",
   "author": "Mark Auger",
-  "version": "1.2.6",
+  "version": "1.2.9",
   "description": "TensorflowJS Dataset parsing and stringifying",
   "main": "lib/Tensorset.js",
   "type": "commonjs",
   "types": "lib",
   "license": "MIT",
   "scripts": {
-    "prepublish": "tsc",
-    "build": "tsc && cp test/dataset.json lib/test",
+    "prepublish": "yarn build",
+    "build": "yarn clean && tsc && cp test/dataset.json lib/test",
     "clean": "rm -rf lib",
     "test": "jest --silent",
     "lint": "eslint **/*.ts --fix"

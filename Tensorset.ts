@@ -1,11 +1,11 @@
 import * as tf from '@tensorflow/tfjs';
-import {Tensor2D} from '@tensorflow/tfjs';
+import * as tfCore from '@tensorflow/tfjs-core';
 
 /**
 * Tensorset is a class used similarly to JSON for stringifying
 * and parsing Google's KNN Classifier datasets
 * @author Mark Auger
-* @version 1.2.6
+* @version 1.2.9
 * @social Follow me on GitHub at https://github.com/swimauger
 * @license
 * Copyright (c) 2020 Mark Auger
@@ -40,7 +40,7 @@ class Tensorset {
   * const dataset = Tensorset.parse(data);
   * @returns { [label: string]: Tensor2D } Returns KNN Classifier readable dataset
   **/
-  static parse(data: string): { [label: string]: Tensor2D } {
+  static parse(data: string): { [label: string]: tf.Tensor2D | tfCore.Tensor2D } {
     return JSON.parse(data).reduce(
         (dataset: any, {label, values, shape}: any) => {
           return {
