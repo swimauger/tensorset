@@ -18,7 +18,7 @@ TensorflowJS Dataset parsing and stringifying
     const Tensorset = require('tensorset');
 
     // Or ES Modules
-    import Tensorset from "tensorset";
+    import Tensorset from "tensorset/lib/Tensorset";
 ```
 
 <br>
